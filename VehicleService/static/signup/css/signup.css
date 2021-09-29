@@ -1,0 +1,15 @@
+/* stylelint-disable selector-no-qualifying-type, property-no-vendor-prefix */
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+.container {
+    align-items: center;
+}
+ .center {
+    margin: 0 auto;
+    text-align: left;
+    width: 1150px;
+}

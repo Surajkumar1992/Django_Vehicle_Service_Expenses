@@ -24,4 +24,6 @@ urlpatterns = [
     path('logout/', views.logoutuser, name='logoutuser'),
     path('signup/', views.signupuser, name='signupuser'),
     path('current/', views.current, name='current'),
+    path('contact/', views.contact, name='contact'),
+    path('about/', views.about, name='about'),
 ]

@@ -9,6 +9,12 @@ from django.contrib.auth import login, logout, authenticate
 def home(request):
     return render(request, 'VehicleService/home.html')
 
+def contact(request):
+    return render(request, 'VehicleService/contact.html')
+
+def about(request):
+    return render(request, 'VehicleService/about.html')
+
 # SignUp
 def signupuser(request):
     if request.method == 'GET':
