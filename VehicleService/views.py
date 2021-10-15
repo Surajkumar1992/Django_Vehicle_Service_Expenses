@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError, InternalError
 from django.contrib.auth import login, logout, authenticate
+from .forms import vehicleForm
 
 
 # HomePage
@@ -43,6 +44,20 @@ def loginuser(request):
         else:
             login(request, user)
             return redirect('current')
+
+def createCarLog(request):
+    if request.method == 'GET':
+        return render(request, 'VehicleService/createCarLog.html', {'forms': vehicleForm()})
+    else:
+        try:
+            form = vehicleForm(request.POST)
+            newVehicle = form.save(commit=False)
+            newVehicle.user = request.user
+            newVehicle.save()
+            return redirect('current')
+        except ValueError:
+            return render(request, 'VehicleService/createCarLog.html', {'error': 'Bad data passed, Please try again!!! '})
+
 
 def logoutuser(request):
     if request.method == 'POST':

@@ -26,4 +26,5 @@ urlpatterns = [
     path('current/', views.current, name='current'),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
+    path('createCarLog/', views.createCarLog, name='createCarLog'),
 ]
