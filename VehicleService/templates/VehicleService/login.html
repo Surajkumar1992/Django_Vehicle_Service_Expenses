@@ -35,11 +35,16 @@
   <body>
     <div class="container">
       <form method="POST" class="form-signin">
-        <h2 class="form-signin-heading"> Login here !!! </h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+       {% csrf_token %}
+        <h1 class="form-signin-heading"> Login </h1>
+          <div class="form-group">
+                    <label for="username">Username: </label>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
+          </div>
+            <div class="form-group">
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+            </div>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me

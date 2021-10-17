@@ -47,22 +47,9 @@
             {% endif %}
             <form method="POST">
                 {% csrf_token %}
-                <div class="form-group">
-                    <label for="customer_name"> Customer Name </label>
-                    <input type="text" name="customer_name" class="form-control" id="customer_name" required>
-                </div>
-                <div class="form-group">
-                    <label for="customer_no"> Customer Phone No. </label>
-                    <input type="integers" class="form-control" id="customer_no" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="car_model"> Customer Model </label>
-                    <input type="car_model" class="form-control" id="car_model" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="car_reg_no"> Car Model </label>
-                    <input type="integers" class="form-control" id="car_reg_no" required></textarea>
-                </div>
+                            <div class="form-group">
+                                {{ forms.as_p }}
+                            </div>
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
         </div>
